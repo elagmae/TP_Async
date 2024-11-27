@@ -11,6 +11,11 @@ public class ASyncRotation : MonoBehaviour
 
     public void Rotate()
     {
+        if (_source != null)
+        {
+            _source.Cancel();
+        }
+
         _source = new CancellationTokenSource();
         _task = RotateCube(_source.Token);
     }

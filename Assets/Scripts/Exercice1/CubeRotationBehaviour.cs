@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class CubeRotationBehaviour : MonoBehaviour
 {
-    private Coroutine _rotationCoroutine;
-
     // Exercice 1
 
     public void Rotate()
     {
-        _rotationCoroutine = StartCoroutine(RotateCube());
+        StopAllCoroutines();
+        StartCoroutine(RotateCube());
     }
 
     public IEnumerator RotateCube()
@@ -26,6 +25,6 @@ public class CubeRotationBehaviour : MonoBehaviour
 
     public void StopRotation()
     {
-        StopCoroutine(_rotationCoroutine);
+        StopAllCoroutines();
     }
 }
